@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{/layouts/defaultLayout}">
+	<head>
+    	<title>Create New Product</title>
+	</head>
+	<body>
+		<section layout:fragment="content">
+	    	<h3>New Game</h3>
+			<p>Please enter the title, genre, description, age rating, and price for the game to be added.</p>
+			<form action="#" th:action="@{/products/create/process}" th:object="${productModel}" method="post">
+				<div class="form-group">
+					<label>Title:</label>
+					<input class="form-control" type="text" th:field="*{title}" />
+				</div>
+				<div class="form-group">
+					<label>Genre:</label>
+					<input class="form-control" type="text" th:field="*{genre}" />
+				</div>
+				<div class="form-group">
+					<label>Description:</label>
+					<input class="form-control" type="text" th:field="*{description}" />
+				</div>
+				<div class="form-group">
+					<label>Age Rating:</label>
+					<input class="form-control" type="text" th:field="*{ageRating}" />
+				</div>
+				<div class="form-group">
+					<label>Price:</label>
+					<input class="form-control" type="text" th:field="*{price}" />
+				</div>
+			    <p>
+					<input class="btn btn-outline-primary" type="submit" value="Submit" /> 
+			    	<input class="btn btn-outline-danger" type="reset" value="Reset" />
+			    </p>
+		    </form>
+		</section>
+	</body>
+</html>
