@@ -81,7 +81,7 @@ public class ProductDataService implements ProductsDataAccessInterface {
 
 	@Override
 	public boolean deleteProduct(int id) {
-		int result = jdbcTemplate.update("DELETE FROM products WHERE product_num = ?", id);
+		int result = jdbcTemplate.update("DELETE FROM games WHERE game_id = ?", id);
 		if (result > 0) {
 			return true;
 		} else {
